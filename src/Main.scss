@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+// Colors
+$primaryColor: hsl(158, 36%, 37%);
+$backgroundColor: hsl(30, 38%, 92%);
+$primaryTextColor: hsl(212, 21%, 14%);
+$secondaryTextColor: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+// Fonts
+$primaryFont: 'Fraunces', serif;
+$secondaryFont: 'Montserrat', sans-serif;
+
+* {
+  font-family: $secondaryFont;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: $primaryFont;
+  font-weight: 700;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $backgroundColor;
+  .card-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    max-width: 600px;
+    background-color: $white;
+    border-radius: 8px;
+    overflow: hidden;
+    .product-img {
+      width: 100%;
+      height: 100%;
+      background-image: url(./assets/images/image-product-desktop.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .product-description {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 32px;
+      h4 {
+        letter-spacing: 4px;
+        color: $secondaryTextColor;
+      }
+
+      .Card-title {
+        color: $primaryTextColor;
+        padding-top: 15px;
+        line-height: 35px;
+      }
+
+      p {
+        font-size: 13px;
+        color: $secondaryTextColor;
+        padding-top: 30px;
+        line-height: 25px;
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        h1 {
+          color: $primaryColor;
+        }
+        h5{
+          color: $secondaryTextColor;
+          text-decoration: line-through;
+        }
+      }
+      button{
+        transition: all 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 13px;
+        color:$white;
+        background-color: $primaryColor;
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        padding: 16px;
+        &:hover{
+          transition: all 0.5s ease;
+          background-color: hsl(159, 36%, 23%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  main{
+    padding: 20px;
+    width: 100%;
+    .card-container{
+      display: grid;
+      grid-template-columns: 1fr;
+      border-radius: 10px;
+      overflow: hidden;
+      .product-img{
+        background-image: url(./assets/images/image-product-mobile.jpg);
+        height: 200px;
+      }
+    }
+  }
+} 
